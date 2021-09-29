@@ -1,0 +1,108 @@
+<section class="container">
+  
+
+    <mat-toolbar color="gray">Application Form : &nbsp; 
+       <mat-label> Candidate Information</mat-label>
+      </mat-toolbar>
+            <form [formGroup]="userForm" (ngSubmit)="save()">
+                    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" >
+                        <mat-form-field fxFlex="30%">
+                            <input matInput placeholder="First Name" aria-label="First Name" formControlName="firstname" required>
+                           <!-- <mat-error *ngIf="userForm.get('name').get('first').hasError('required')">First name is required</mat-error>
+                            <mat-error *ngIf="userForm.get('name').get('first').hasError('minLength')">Must be at least 2 characters</mat-error>
+                            <mat-error *ngIf="userForm.get('name').get('first').hasError('maxLength')">Must be at least 50 characters</mat-error>-->
+                        </mat-form-field>    
+    
+                        <mat-form-field fxFlex="20%">
+                            <input matInput placeholder="Initials" aria-label="Middle Initials" formControlName="initials" required>
+                            <mat-error *ngIf="userForm.get('initials').invalid">only Initials</mat-error>
+                        </mat-form-field>  
+    
+                        <mat-form-field fxFlex="30%">
+                            <input matInput placeholder="Last Name" aria-label="Last Name" formControlName="lastname" required>
+                            <!--<mat-error *ngIf="userForm.get('name').get('last').hasError('required')">Last name is required</mat-error>
+                            <mat-error *ngIf="userForm.get('name').get('last').hasError('minLength')">Must be at least 2 characters</mat-error>
+                            <mat-error *ngIf="userForm.get('name').get('last').hasError('maxLength')">Must be at least 50 characters</mat-error>-->
+                        </mat-form-field>   
+                        
+                        
+                    </div>
+    
+                    <!--<div fxLayout="row" fxLayout.lt-sm="column"  fxLayout="10px">
+                      <mat-form-field fxFlex="50%">
+                        <input matInput placeholder="Date of Birth" aria-label="Date of Birth" formControlName="dateOfBirth" [matDatepicker]="dateOfBirthPicker">
+                        <mat-hint *ngIf="userForm.get('dateOfBirth').touched">{{this.age}} years old</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="dateOfBirthPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #dateOfBirthPicker></mat-datepicker>
+                        <mat-error *ngIf="userForm.get('dateOfBirth').invalid">Date must be with the last 100 years</mat-error>
+                      </mat-form-field>
+                    </div>-->
+    
+                    
+    
+                    <div fxLayout="row"  >
+                      <mat-form-field fxFlex="30%">
+                        <input matInput [matDatepicker]="picker1" placeholder="Date of Birth" aria-label="Date of Birth" formControlName="dateOfBirth" required>                   
+                          <mat-hint *ngIf="userForm.get('dateOfBirth').touched">{{this.age}} years old</mat-hint>
+                          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>  
+                          <mat-datepicker #picker1></mat-datepicker> 
+                        <!--<mat-hint *ngIf="userForm.get('dateOfBirth').touched">{{this.age}} years old</mat-hint>-->
+                      </mat-form-field>
+                    </div>
+    
+                    <div fxLayout="row"  >
+                      <mat-form-field fxFlex="30%">
+                        <input matInput type="email" placeholder="Email" aria-label="Email" formControlName="email" required>                            
+                        <mat-error *ngIf="userForm.get('email').invalid">Please input your Email</mat-error>
+                      </mat-form-field>
+                    </div>
+    
+                    <div fxLayout="row" fxLayout.lt-sm="column"  >
+                      <mat-form-field fxFlex="50%">
+                        <input matInput type="text" placeholder="Current Home Address" aria-label="Address" formControlName="address" required>                            
+                        <mat-error *ngIf="userForm.get('address').invalid">Please enter your Address</mat-error>
+                      </mat-form-field>
+                    </div>
+    
+                    <div fxLayout="row" fxLayout.lt-sm="column" >
+                      <mat-form-field fxFlex="30%">
+                        <input matInput type="tel" placeholder="Phone - 540 555 8193" aria-label="phone" formControlName="phones" required>                            
+                        <mat-error *ngIf="userForm.get('phones').invalid">Please enter your cell number</mat-error>
+                      </mat-form-field>
+                    </div>
+    
+    
+                <div class="form-group row">
+                  <div class="form-group col-md-4"> 
+                    <mat-label>Upload your Resume </mat-label> 
+                    <input type="file" #Image  (change)="onFileSelected($event)" accept="application/pdf, application/msword"  formControlName="Image" required>  
+                    <!-- <input type="button" value="upload" (click)="fileUpload()">  -->
+                    <mat-error><span *ngIf="!userForm.get('Image').value && userForm.get('Image').touched">Please Upload</span></mat-error>
+                  </div> 
+                                
+    
+                  <div class="form-group col-md-4"> 
+                    <mat-label>Upload your DL/STATE ID (Front cover) </mat-label>   
+                    <input type="file"  (change)="onFileSelected($event)" accept="image/*" formControlName="Image2" required>  
+                    <!-- <input type="button" value="upload" (click)="fileUpload()">  --> 
+                    <mat-error><span *ngIf="!userForm.get('Image2').value && userForm.get('Image2').touched">Please Upload</span> </mat-error>
+                  </div>        
+                  
+                    
+                  <div class="form-group col-md-4"> 
+                    <mat-label>Upload your DL/STATE ID (Back cover) </mat-label>   
+                    <input type="file"  (change)="onFileSelected($event)" accept="image/*" formControlName="Image3" required >  
+                   <!-- <input type="button" value="upload" (click)="fileUpload()">  -->
+                    <mat-error><span *ngIf="!userForm.get('Image3').value && userForm.get('Image3').touched">Please Upload</span></mat-error>
+                  </div>   
+                </div>
+           
+    
+                <div fxLayout="row" class="margin-top">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="this.userForm.invalid" >Update</button>
+                    <span *ngIf="datasaved" class="success"> {{message}} </span>
+                  </div>
+    
+         </form>
+    
+    </section>

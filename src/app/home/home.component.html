@@ -1,0 +1,54 @@
+<main >
+        <article class="nav-back"><div style="background-color: green;">
+                <mat-card class="backdiv">
+                        <h1 style="text-align: center;"><b>Mortad Wallet service center</b></h1>
+                        <p style="text-align: center;"> Helping you to solve your crypto and wallet issues. </p>
+                        
+                </mat-card>
+        </div>
+
+            </article>
+    
+    
+    <article class="container" style="margin-top: 30px">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="30%" fxFlex.xs="100%" >
+                <mat-card [routerLink]="['/wallets/wallet']" >
+                    <img mat-card-image src="../../assets/crptoHack.jpg">
+                        <mat-card-content> 
+                            <p>Crpto Hacked? Please click here</p> 
+                        </mat-card-content>
+                </mat-card>   
+            </div>
+    
+            <div fxFlex="30%" fxFlex.xs="100%">
+                <mat-card [routerLink]="['/wallets/wallet']">
+                    <img mat-card-image src="../../assets/crytoScam.jpg">
+                        <mat-card-content> 
+                            <p>Wallet Scammed? Please click here</p> 
+                        </mat-card-content>
+                </mat-card>
+            </div>
+    
+            <div fxFlex="30%" fxFlex.xs="100%">  
+                <mat-card [routerLink]="['/wallets/wallet']">
+                    <img mat-card-image src="../../assets/cryptoComplaint.jpg">
+                        <mat-card-content> 
+                            <p>Other Complaint? Please click here</p> 
+                        </mat-card-content>
+                </mat-card>
+            </div>
+    
+        </div>
+    
+    
+    </article>
+    
+    <article class="container">
+            <app-comment></app-comment>
+    </article>
+</main>
+
+
+
+

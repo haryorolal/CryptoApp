@@ -1,0 +1,24 @@
+<section class="app-container">
+  <mat-toolbar color='primary' fxLayoutGap='8px' class="app-toolbar fixed-top" [class.app-is-mobile]='media.isActive("xs")'>
+    <!--<mat-icon  mat-icon-button (click)='sidenav.toggle()' style="color: black ">menu</mat-icon>-->
+    <a mat-icon-button routerLink='/home'><span class="mat-h2" style="font-size: large; color: black">Mortad Wallet </span> </a>
+    <span class="flex-spacer"></span>
+    <ul>
+      <li><a [routerLink]="['home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+      <li><a [routerLink]="['aboutus']" routerLinkActive="active">About</a></li>
+      <li><a [routerLink]="['/findjob/vacancy-main']" routerLinkActive="active">Vacancy</a></li>
+      <li><a [routerLink]="['contactus']" routerLinkActive="active">Contact</a></li>
+    </ul>
+
+    <!--<span class="flex-spacer"></span>
+    <button mat-mini-fab routerLink="/user/viewUser" *ngIf='displayAccountIcons' matTooltip="Profile" aria-label="Profile"><mat-icon style="color: black !important">account_circle</mat-icon></button>
+    <button mat-mini-fab routerLink="/user/logout" *ngIf='displayAccountIcons' matTooltip="Logout" arial-label="Logout"><mat-icon style="color: black !important">lock_open</mat-icon></button>
+  -->
+  </mat-toolbar>
+
+  <article class="app-sidenav-container" >
+         <router-outlet></router-outlet>
+         <app-footer ></app-footer>   
+  </article>
+
+</section>

@@ -1,0 +1,27 @@
+.nav-header{
+    background-image: url('../../assets/job.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.backdiv{
+    background-color: rgba(17, 71, 17, 0.979);
+    position: absolute;
+    margin-top: 50px;
+    left: 10%;
+    width: 500px;
+    color: white;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+@media(max-width:768px) {
+    .backdiv{
+    background-color: rgba(17, 71, 17, 0.979);
+    position: absolute;
+    margin-top: 50px;
+    left: 10%;
+    width: 300px;
+    color: white;
+    font-family: Arial,Helvetica,sans-serif;     
+    }
+}

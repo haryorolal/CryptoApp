@@ -1,0 +1,54 @@
+<section class="container">
+    <div fxLayoutAlign="center"><h1><b>Your Job Reviews</b></h1></div>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="30%" fxFlex.xs="100%" >
+            <mat-card routerLink="/vacancy-shopper" class="card-shadow">
+                <mat-card-header>                    
+                <mat-card-title>Vacant Position</mat-card-title>
+                <mat-card-subtitle> Mystery/Secret shopper</mat-card-subtitle>
+            </mat-card-header>
+                <mat-card-content>
+                    Are you an experienced Mystery/Secret shopper? This Job is for you
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div fxFlex="30%" fxFlex.xs="100%">
+            <mat-card [routerLink]="['/vacancy-recep']" class="card-shadow">
+                <mat-card-header>                    
+                <mat-card-title>Vacant Position</mat-card-title>
+                <mat-card-subtitle>Personal Assistant</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    Are you an experienced Personal Assistant? This Job is for you
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div fxFlex="30%" fxFlex.xs="100%">
+            <mat-card [routerLink]="['/vacancy-partner']" class="card-shadow">
+                <mat-card-header>                    
+                <mat-card-title>Vacant Position</mat-card-title>
+                <mat-card-subtitle>Maintenance Partner</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    Are you an experienced Maintenance Partner? This Job is for you
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div fxFlex="30%" fxFlex.xs="100%">
+            <mat-card routerLink="/vacancy-digital" class="card-shadow">
+                <mat-card-header>                    
+                <mat-card-title>Vacant Position</mat-card-title>
+                <mat-card-subtitle>Digital Marketer</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    Are you an experienced Digital Marketer? This Job is for you
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+
+</section>

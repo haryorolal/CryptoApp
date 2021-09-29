@@ -1,0 +1,29 @@
+    <main>
+               <article class="container">
+                <div >
+                    <h1 style="text-align: center">Kindly select your wallet</h1>
+               </div>
+               <div  fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="16px grid" >
+                       <!--<div  fxFlex="30%">
+                           <mat-card [routerLink]="['/submit']">
+                               <mat-card-header> {{res.wallet_name}} </mat-card-header>
+                           </mat-card> 
+                       </div>-->
+
+                       <div *ngFor="let res of Thewalle" fxFlex="30%" >
+                               <mat-card [routerLink]="['/submit']" >
+                                   <img mat-card-image [src]="res.wallet_image" >
+                                       <mat-card-content> 
+                                           <p>{{res.wallet_name}}</p> 
+                                       </mat-card-content>
+                               </mat-card>   
+                       </div>
+               </div>   
+               </article>
+                    
+                   
+                        
+            </main>
+
+
+

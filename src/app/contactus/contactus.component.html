@@ -1,0 +1,80 @@
+<section>
+    <article class="nav-back">
+            <div style="background-color: green;">
+                    <mat-card class="backdiv">
+                            <h1 style="text-align: center;"><b>Contact Us - We are here for you</b></h1>
+                            
+                    </mat-card>
+            </div>
+</article>
+
+<article class="margintop container">
+        <mat-card>
+                <div fxLayout="row wrap" fxLayoutGap="16px grid">                    
+                   <div fxFlex="70%" fxFlex.xs="100%">
+                        <form [formGroup]="contactForm" (ngSubmit)="postContact()" >
+                                <mat-label><b>Quick Contact</b></mat-label>
+                                <div >
+                                    <mat-form-field fxFlex="60%" fxFlex.xs="100%"> 
+                                        <input matInput type="text" placeholder="name" formControlName="names"  required> 
+                                    </mat-form-field>
+                                </div>
+                
+                                <div>
+                                    <mat-form-field fxFlex="60%" fxFlex.xs="100%"> 
+                                        <input matInput type="email" placeholder="email" formControlName="email" required> 
+                                    </mat-form-field>
+                                </div>
+                
+                                <div>
+                                    <mat-form-field fxFlex="60%" fxFlex.xs="100%"> 
+                                        <textarea matInput type="text" placeholder="message" formControlName="messages" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <button type="submit" [disabled]="contactForm.invalid" style="background-color: darkolivegreen; color: white;">Submit</button>
+                                                                                                                                                                                                                                                                                                
+                        </form>
+                   </div>
+
+                   <div fxFlex="30%" fxFlex.xs="100%" >
+                       <mat-label><b>Our Address</b></mat-label>
+                        <Address>
+                            15255 South 94th Avenue, <br>
+                            Orland Park, IL 60462. <br>
+                            <p>Contact Number(WhatsApp): 786-4963-994</p>
+                        </Address>   
+                    </div>
+
+                </div>                
+            </mat-card>
+</article>
+
+<article class="container margintop">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="50%" fxFlex.xs="100%">
+            <mat-card class="card-shadow">
+                <mat-card-header>
+                    <mat-card-title>CURRENT CLIENTS</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>                    
+                <p>Have a question? Need assistance with maintenance, technology, passwords, or something else entirely? 
+                        You can get in touch with us and we will respond as soon as possible.</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div fxFlex="50%" fxFlex.xs="100%">
+            <mat-card class="card-shadow" [routerLink]="['/vacancy-partner']">
+                <mat-card-header>
+                    <mat-card-title>BECOME A DIGITAL MARKETER</mat-card-title>
+                </mat-card-header>
+                <mat-card-content> 
+                    <p>We partner with top digital marketers to bring the highest value and service to our clients. 
+                            If you’re interested in becoming a preferred Enterprise digital marketer, <b>Apply now</b>.</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+</article>
+</section>
